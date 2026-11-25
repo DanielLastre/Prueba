@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net10.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\GestionProyectosTareas.Application\GestionProyectosTareas.Application.csproj" />
+        <ProjectReference Include="..\GestionProyectosTareas.Domain\GestionProyectosTareas.Domain.csproj" />
+    </ItemGroup>
+
+</Project>
