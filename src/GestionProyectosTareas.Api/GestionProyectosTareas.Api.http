@@ -3,4 +3,39 @@
 GET {{GestionProyectosTareas.Api_HostAddress}}/weatherforecast/
 Accept: application/json
 
-###
+### Listar proyectos
+GET {{GestionProyectosTareas.Api_HostAddress}}/api/Proyectos
+Accept: application/json
+
+### Crear proyecto
+POST {{GestionProyectosTareas.Api_HostAddress}}/api/Proyectos
+Content-Type: application/json
+
+{
+  "nombre": "Proyecto Local",
+  "descripcion": "Prueba en PostgreSQL"
+}
+
+### Consultar avance del proyecto (reemplaza {proyectoId} por el id devuelto al crear el proyecto)
+GET {{GestionProyectosTareas.Api_HostAddress}}/api/Proyectos/{proyectoId}/avance
+Accept: application/json
+
+### Crear tarea en el proyecto (reemplaza {proyectoId} por el id del proyecto)
+POST {{GestionProyectosTareas.Api_HostAddress}}/api/Tareas
+Content-Type: application/json
+
+{
+  "proyectoId": "{proyectoId}",
+  "titulo": "Configurar entorno",
+  "descripcion": "Validar persistencia y endpoints",
+  "estado": "Pendiente",
+  "prioridad": "Alta"
+}
+
+### Listar tareas del proyecto
+GET {{GestionProyectosTareas.Api_HostAddress}}/api/Tareas/proyecto/{proyectoId}
+Accept: application/json
+
+### Listar tareas vencidas
+GET {{GestionProyectosTareas.Api_HostAddress}}/api/Tareas/vencidas
+Accept: application/json
