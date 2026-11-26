@@ -1,12 +1,14 @@
 
 using GestionProyectosTareas.Application.DTOs.Proyectos;
 using GestionProyectosTareas.Application.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace GestionProyectosTareas.Api.Controllers;
 
 [ApiController]
-[Route("api/[controller]")]
+[Authorize]
+[Route("api/v1/[controller]")]
 public class ProyectosController : ControllerBase
 {
     private readonly IProyectoService _proyectoService;

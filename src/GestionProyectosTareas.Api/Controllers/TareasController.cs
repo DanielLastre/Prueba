@@ -1,12 +1,14 @@
 using GestionProyectosTareas.Application.Services;
 using GestionProyectosTareas.Application.DTOs.Tareas;
 using GestionProyectosTareas.Domain.Enums;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace GestionProyectosTareas.Api.Controllers;
 
 [ApiController]
-[Route("api/[controller]")]
+[Authorize]
+[Route("api/v1/[controller]")]
 public class TareasController : ControllerBase
 {
     private readonly ITareaService _tareaService;

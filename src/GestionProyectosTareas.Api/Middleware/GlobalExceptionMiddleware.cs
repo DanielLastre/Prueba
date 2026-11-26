@@ -35,6 +35,8 @@ public class GlobalExceptionMiddleware
             NotFoundException => (HttpStatusCode.NotFound, "Recurso no encontrado"),
             ProyectoConTareasPendientesException => (HttpStatusCode.Conflict, "Conflicto de regla de negocio"),
             DomainException => (HttpStatusCode.BadRequest, "Error de validación de dominio"),
+            UnauthorizedAccessException => (HttpStatusCode.Unauthorized, "No autorizado"),
+            InvalidOperationException => (HttpStatusCode.BadRequest, "Operación no válida"),
             _ => (HttpStatusCode.InternalServerError, "Error interno del servidor")
         };
 
