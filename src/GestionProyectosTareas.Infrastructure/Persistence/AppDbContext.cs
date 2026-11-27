@@ -1,12 +1,10 @@
 using GestionProyectosTareas.Domain.Entities;
-using GestionProyectosTareas.Infrastructure.Identity;
 using GestionProyectosTareas.Infrastructure.Persistence.Configurations;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace GestionProyectosTareas.Infrastructure.Persistence;
 
-public class AppDbContext : IdentityDbContext<ApplicationUser>
+public class AppDbContext : DbContext
 {
     public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
     {

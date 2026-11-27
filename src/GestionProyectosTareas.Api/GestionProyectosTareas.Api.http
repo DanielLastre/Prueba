@@ -1,34 +1,12 @@
 @GestionProyectosTareas.Api_HostAddress = http://localhost:5016
-@token = pegar_aqui_el_token_jwt
 
-### Registrar usuario
-POST {{GestionProyectosTareas.Api_HostAddress}}/api/v1/Auth/register
-Content-Type: application/json
-
-{
-  "email": "usuario@ejemplo.com",
-  "password": "Test123",
-  "nombreCompleto": "Usuario Prueba"
-}
-
-### Login
-POST {{GestionProyectosTareas.Api_HostAddress}}/api/v1/Auth/login
-Content-Type: application/json
-
-{
-  "email": "usuario@ejemplo.com",
-  "password": "Test123"
-}
-
-### Listar proyectos (requiere token)
-GET {{GestionProyectosTareas.Api_HostAddress}}/api/v1/Proyectos
+### Listar proyectos
+GET {{GestionProyectosTareas.Api_HostAddress}}/api/v1/proyectos
 Accept: application/json
-Authorization: Bearer {{token}}
 
-### Crear proyecto (requiere token)
-POST {{GestionProyectosTareas.Api_HostAddress}}/api/v1/Proyectos
+### Crear proyecto
+POST {{GestionProyectosTareas.Api_HostAddress}}/api/v1/proyectos
 Content-Type: application/json
-Authorization: Bearer {{token}}
 
 {
   "nombre": "Proyecto Local",
@@ -38,14 +16,12 @@ Authorization: Bearer {{token}}
 }
 
 ### Consultar avance del proyecto (reemplaza {proyectoId} por el id devuelto al crear el proyecto)
-GET {{GestionProyectosTareas.Api_HostAddress}}/api/v1/Proyectos/{proyectoId}/avance
+GET {{GestionProyectosTareas.Api_HostAddress}}/api/v1/proyectos/{proyectoId}/avance
 Accept: application/json
-Authorization: Bearer {{token}}
 
 ### Crear tarea en el proyecto (reemplaza {proyectoId} por el id del proyecto)
-POST {{GestionProyectosTareas.Api_HostAddress}}/api/v1/Tareas
+POST {{GestionProyectosTareas.Api_HostAddress}}/api/v1/tareas
 Content-Type: application/json
-Authorization: Bearer {{token}}
 
 {
   "proyectoId": "{proyectoId}",
@@ -56,11 +32,9 @@ Authorization: Bearer {{token}}
 }
 
 ### Listar tareas del proyecto
-GET {{GestionProyectosTareas.Api_HostAddress}}/api/v1/Tareas/proyecto/{proyectoId}
+GET {{GestionProyectosTareas.Api_HostAddress}}/api/v1/tareas/proyecto/{proyectoId}
 Accept: application/json
-Authorization: Bearer {{token}}
 
 ### Listar tareas vencidas
-GET {{GestionProyectosTareas.Api_HostAddress}}/api/v1/Tareas/vencidas
+GET {{GestionProyectosTareas.Api_HostAddress}}/api/v1/tareas/vencidas
 Accept: application/json
-Authorization: Bearer {{token}}
