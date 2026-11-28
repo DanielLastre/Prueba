@@ -2,6 +2,8 @@ using System.Text.Json.Serialization;
 using GestionProyectosTareas.Api.Middleware;
 using GestionProyectosTareas.Application;
 using GestionProyectosTareas.Infrastructure;
+using GestionProyectosTareas.Infrastructure.Persistence;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -43,7 +45,17 @@ if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
     app.UseSwagger();
-    app.UseSwaggerUI();
+    app.UseSwaggerUI(options =>
+    {
+        options.SwaggerEndpoint("/swagger/v1/swagger.json", "Gestión de Proyectos y Tareas API v1");
+        options.RoutePrefix = string.Empty;
+    });
+}
+
+using (var scope = app.Services.CreateScope())
+{
+    var dbContext = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+    await dbContext.Database.MigrateAsync();
 }
 
 app.UseHttpsRedirection();

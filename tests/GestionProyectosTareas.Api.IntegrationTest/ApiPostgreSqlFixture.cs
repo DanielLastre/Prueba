@@ -38,7 +38,7 @@ public class ApiPostgreSqlFixture : IAsyncLifetime
 
         using var scope = _factory.Services.CreateScope();
         var dbContext = scope.ServiceProvider.GetRequiredService<AppDbContext>();
-        await dbContext.Database.EnsureCreatedAsync();
+        await dbContext.Database.MigrateAsync();
     }
 
     public async Task DisposeAsync()
