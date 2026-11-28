@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="GestionProyectosTareas.Api.Tests/GestionProyectosTareas.Api.Tests.csproj" />
+  <Project Path="GestionProyectosTareas.Application.Tests/GestionProyectosTareas.Application.Tests.csproj" />
+  <Project Path="GestionProyectosTareas.Domain.Tests/GestionProyectosTareas.Domain.Tests.csproj" />
+  <Project Path="GestionProyectosTareas.Infrastructure.IntegrationTests/GestionProyectosTareas.Infrastructure.IntegrationTests.csproj" />
+</Solution>
