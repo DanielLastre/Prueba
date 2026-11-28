@@ -6,9 +6,9 @@
     <Project Path="src/GestionProyectosTareas.Infrastructure/GestionProyectosTareas.Infrastructure.csproj" />
   </Folder>
   <Folder Name="/tests/">
-    <Project Path="tests/GestionProyectosTareas.Api.Tests/GestionProyectosTareas.Api.Tests.csproj" />
-    <Project Path="tests/GestionProyectosTareas.Application.Tests/GestionProyectosTareas.Application.Tests.csproj" />
-    <Project Path="tests/GestionProyectosTareas.Domain.Tests/GestionProyectosTareas.Domain.Tests.csproj" />
-    <Project Path="tests/GestionProyectosTareas.Infrastructure.IntegrationTests/GestionProyectosTareas.Infrastructure.IntegrationTests.csproj" />
+    <Project Path="tests/GestionProyectosTareas.Api.IntegrationTest/GestionProyectosTareas.Api.IntegrationTest.csproj" />
+    <Project Path="tests/GestionProyectosTareas.Application.UnitTest/GestionProyectosTareas.Application.UnitTest.csproj" />
+    <Project Path="tests/GestionProyectosTareas.Domain.UnitTest/GestionProyectosTareas.Domain.UnitTest.csproj" />
+    <Project Path="tests/GestionProyectosTareas.Infrastructure.IntegrationTest/GestionProyectosTareas.Infrastructure.IntegrationTest.csproj" />
   </Folder>
 </Solution>
